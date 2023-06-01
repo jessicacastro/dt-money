@@ -20,6 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    /* Aliases */
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["./components/*"],
