@@ -27,7 +27,10 @@
       "@pages/*": ["./pages/*"],
       "@assets/*": ["./assets/*"],
       "@styles/*": ["./styles/*"],
-      "@services/*": ["./services/*"]
+      "@services/*": ["./services/*"],
+      "@contexts/*": ["./contexts/*"],
+      "@utils/*": ["./utils/*"],
+      "@hooks/*": ["./hooks/*"]
     }
   },
   "include": ["src"],

@@ -1,12 +1,14 @@
-import { Transaction } from "@pages/Transactions";
+import { useContext } from "react";
+
+import { TransactionsContext } from "@contexts/TransactionsContext";
+
+import { dateFormatter, valueFormatter } from "@utils/formatter";
 
 import { PriceHighlight, TransactionsTableContainer } from "./styles";
 
-interface TransactionsTableProps {
-  transactions: Transaction[];
-}
+export const TransactionsTable = () => {
+  const { transactions } = useContext(TransactionsContext);
 
-export const TransactionsTable = ({ transactions }: TransactionsTableProps) => {
   return (
     <TransactionsTableContainer>
       <tbody>
@@ -16,11 +18,12 @@ export const TransactionsTable = ({ transactions }: TransactionsTableProps) => {
               <td width="50%">{transaction.description}</td>
               <td>
                 <PriceHighlight variant={transaction.type}>
-                  {transaction.value}
+                  {transaction.type === "outcome" && "- "}
+                  {valueFormatter.format(transaction.value)}
                 </PriceHighlight>
               </td>
               <td>{transaction.category}</td>
-              <td>{transaction.createdAt}</td>
+              <td>{dateFormatter(transaction.createdAt)}</td>
             </tr>
           ))}
       </tbody>
