@@ -12,6 +12,7 @@ interface Transaction {
 
 interface TransactionsContextType {
   transactions: Transaction[];
+  loadTransactions: (query?: string) => Promise<void>;
 }
 
 interface TransactionsProviderProps {
@@ -25,10 +26,14 @@ export const TransactionsProvider = ({
 }: TransactionsProviderProps) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
-  const loadTransactions = async () => {
-    const response = await apiService.get(
-      "/transactions?_sort=createdAt&_order=asc"
-    );
+  const loadTransactions = async (query?: string) => {
+    const response = await apiService.get("/transactions", {
+      params: {
+        q: query,
+        _sort: "createdAt",
+        _order: "asc",
+      },
+    });
 
     setTransactions(response.data);
   };
@@ -38,7 +43,7 @@ export const TransactionsProvider = ({
   }, []);
 
   return (
-    <TransactionsContext.Provider value={{ transactions }}>
+    <TransactionsContext.Provider value={{ transactions, loadTransactions }}>
       {children}
     </TransactionsContext.Provider>
   );
