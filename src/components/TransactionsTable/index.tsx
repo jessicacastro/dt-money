@@ -1,25 +1,29 @@
+import { Transaction } from "@pages/Transactions";
+
 import { PriceHighlight, TransactionsTableContainer } from "./styles";
 
-export const TransactionsTable = () => (
-  <TransactionsTableContainer>
-    <tbody>
-      <tr>
-        <td width="50%">Desenvolvimento de site</td>
-        <td>
-          <PriceHighlight variant="income">R$12.000,00</PriceHighlight>
-        </td>
-        <td>Venda</td>
-        <td>13/04/2022</td>
-      </tr>
+interface TransactionsTableProps {
+  transactions: Transaction[];
+}
 
-      <tr>
-        <td width="50%">Hamburguer</td>
-        <td>
-          <PriceHighlight variant="outcome">- R$90,00</PriceHighlight>
-        </td>
-        <td>Alimentação</td>
-        <td>10/04/2022</td>
-      </tr>
-    </tbody>
-  </TransactionsTableContainer>
-);
+export const TransactionsTable = ({ transactions }: TransactionsTableProps) => {
+  return (
+    <TransactionsTableContainer>
+      <tbody>
+        {transactions.length > 0 &&
+          transactions.map((transaction) => (
+            <tr key={transaction.id}>
+              <td width="50%">{transaction.description}</td>
+              <td>
+                <PriceHighlight variant={transaction.type}>
+                  {transaction.value}
+                </PriceHighlight>
+              </td>
+              <td>{transaction.category}</td>
+              <td>{transaction.createdAt}</td>
+            </tr>
+          ))}
+      </tbody>
+    </TransactionsTableContainer>
+  );
+};
