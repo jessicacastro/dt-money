@@ -1,9 +1,12 @@
-import { TransactionsContext } from '@contexts/TransactionsContext'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { MagnifyingGlass } from 'phosphor-react'
 import { useContext } from 'react'
+
+import { MagnifyingGlass } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
+
+import { TransactionsContext } from '@contexts/TransactionsContext'
+import { zodResolver } from '@hookform/resolvers/zod'
+
 import { SearchFormContainer } from './styles'
 
 const SearchFormSchema = z.object({

@@ -1,11 +1,14 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as Dialog from '@radix-ui/react-dialog'
+import { useContext } from 'react'
+
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
 import { Controller, useForm } from 'react-hook-form'
+
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as Dialog from '@radix-ui/react-dialog'
 import * as z from 'zod'
 
 import { TransactionsContext } from '@contexts/TransactionsContext'
-import { useContext } from 'react'
+
 import {
   CloseButton,
   Content,
@@ -17,7 +20,7 @@ import {
 
 const NewTransactionFormSchema = z.object({
   description: z.string(),
-  value: z.number(),
+  value: z.z.number(),
   category: z.string(),
   type: z.enum(['income', 'outcome']),
 })
