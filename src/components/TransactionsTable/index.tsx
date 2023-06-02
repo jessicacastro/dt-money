@@ -1,13 +1,13 @@
-import { useContext } from "react";
+import { useContext } from 'react'
 
-import { TransactionsContext } from "@contexts/TransactionsContext";
+import { TransactionsContext } from '@contexts/TransactionsContext'
 
-import { dateFormatter, valueFormatter } from "@utils/formatter";
+import { dateFormatter, valueFormatter } from '@utils/formatter'
 
-import { PriceHighlight, TransactionsTableContainer } from "./styles";
+import { PriceHighlight, TransactionsTableContainer } from './styles'
 
 export const TransactionsTable = () => {
-  const { transactions } = useContext(TransactionsContext);
+  const { transactions } = useContext(TransactionsContext)
 
   return (
     <TransactionsTableContainer>
@@ -18,7 +18,7 @@ export const TransactionsTable = () => {
               <td width="50%">{transaction.description}</td>
               <td>
                 <PriceHighlight variant={transaction.type}>
-                  {transaction.type === "outcome" && "- "}
+                  {transaction.type === 'outcome' && '- '}
                   {valueFormatter.format(transaction.value)}
                 </PriceHighlight>
               </td>
@@ -28,5 +28,5 @@ export const TransactionsTable = () => {
           ))}
       </tbody>
     </TransactionsTableContainer>
-  );
-};
+  )
+}

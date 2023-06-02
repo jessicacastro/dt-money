@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PaginationContainer = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const PaginationContainer = styled.div`
   justify-content: center;
 
   div {
-    background: ${(props) => props.theme["gray-600"]};
+    background: ${(props) => props.theme['gray-600']};
     padding: 1rem;
     width: 40px;
     height: 40px;
@@ -17,7 +17,7 @@ export const PaginationContainer = styled.div`
     justify-content: center;
     border-radius: 8px;
     font-weight: bold;
-    color: ${(props) => props.theme["gray-400"]};
+    color: ${(props) => props.theme['gray-400']};
     cursor: pointer;
 
     &:hover {
@@ -25,7 +25,7 @@ export const PaginationContainer = styled.div`
     }
 
     &:first-of-type {
-      background-color: ${(props) => props.theme["green-700"]};
+      background-color: ${(props) => props.theme['green-700']};
       color: ${(props) => props.theme.white};
     }
   }
@@ -38,7 +38,7 @@ export const PaginationContainer = styled.div`
     }
 
     &:last-of-type {
-      color: ${(props) => props.theme["green-700"]};
+      color: ${(props) => props.theme['green-700']};
     }
   }
-`;
+`

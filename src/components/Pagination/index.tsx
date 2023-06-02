@@ -1,5 +1,5 @@
-import { CaretLeft, CaretRight } from "phosphor-react";
-import { PaginationContainer } from "./styles";
+import { CaretLeft, CaretRight } from 'phosphor-react'
+import { PaginationContainer } from './styles'
 
 export const Pagination = () => (
   <PaginationContainer>
@@ -9,4 +9,4 @@ export const Pagination = () => (
     <div>3</div>
     <CaretRight size={32} weight="bold" />
   </PaginationContainer>
-);
+)

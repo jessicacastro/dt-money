@@ -23,6 +23,22 @@
       "category": "Diversão",
       "value": 650,
       "createdAt": "2023-06-01T04:38:31.377Z"
+    },
+    {
+      "description": "Desenvolvimento de app",
+      "category": "Venda",
+      "type": "income",
+      "value": 10000,
+      "createdAt": "2023-06-02T05:41:50.466Z",
+      "id": 4
+    },
+    {
+      "description": "Rodízio de Japa",
+      "category": "Alimentação",
+      "type": "outcome",
+      "value": 70,
+      "createdAt": "2023-06-02T05:52:33.047Z",
+      "id": 5
     }
   ]
 }
