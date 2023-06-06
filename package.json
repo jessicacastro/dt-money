@@ -9,7 +9,7 @@
     "lint": "eslint src --ext ts,tsx",
     "lint:fix": "eslint src --ext ts,tsx --fix",
     "preview": "vite preview",
-    "dev:server": "json-server server.json -w -p 3000 -d 1000"
+    "dev:server": "json-server server.json -w -p 3333 -d 1000"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.0",
@@ -20,7 +20,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.3",
+    "scheduler": "^0.23.0",
     "styled-components": "^5.3.11",
+    "use-context-selector": "^1.4.1",
     "zod": "^3.21.4"
   },
   "devDependencies": {
